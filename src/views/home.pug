@@ -6,22 +6,36 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
         title Noom
-    body 
+    body
         header 
-            h1 It works!
+            h1 Noom
         main
             div#welcome
                 form
-                    input(placeholder="roomName", required, type="text")#roomName
-                    input(placeholder="nickName", required, type="text")#nickName
-                    button Enter Room
-                h4 Open Rooms:
-                ul
-            div#room
-                h3
-                ul 
-                form#msg
-                    input(placeholder="message", required, type="text")
-                    button Send
+                    input(placeholder="room name", required, type="text")
+                    button Enter room
+            div#call
+                div#myStream
+                    video#myFace(autoplay,playsinline,width="400",height="400")
+                    button#mute Mute
+                    button#camera Turn Camera Off
+                    select#cameras
+                    video#peerFace(autoplay,playsinline,width="400",height="400")
         script(src="/socket.io/socket.io.js") 
         script(src="/public/js/app.js") 
+        //- header 
+        //-     h1 It works!
+        //- main
+        //-     div#welcome
+        //-         form
+        //-             input(placeholder="roomName", required, type="text")#roomName
+        //-             input(placeholder="nickName", required, type="text")#nickName
+        //-             button Enter Room
+        //-         h4 Open Rooms:
+        //-         ul
+        //-     div#room
+        //-         h3
+        //-         ul 
+        //-         form#msg
+        //-             input(placeholder="message", required, type="text")
+        //-             button Send
